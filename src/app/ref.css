@@ -1,0 +1,595 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: #111c4d;
+  --color-foreground: #fff;
+  --font-inter: var(--font-inter);
+  --font-montserrat: var(--font-montserrat);
+  --font-bitter: var(--font-bitter);
+  --font-roboto-mono: 'Roboto Mono', monospace;
+  --color-sidebar-ring: oklch(0.708 0 0);
+  --color-sidebar-border: oklch(0.922 0 0);
+  --color-sidebar-accent-foreground: oklch(0.205 0 0);
+  --color-sidebar-accent: oklch(0.97 0 0);
+  --color-sidebar-primary-foreground: oklch(0.985 0 0);
+  --color-sidebar-primary: oklch(0.205 0 0);
+  --color-sidebar-foreground: oklch(0.145 0 0);
+  --color-sidebar: oklch(0.985 0 0);
+  --color-chart-5: oklch(0.769 0.188 70.08);
+  --color-chart-4: oklch(0.828 0.189 84.429);
+  --color-chart-3: oklch(0.398 0.07 227.392);
+  --color-chart-2: oklch(0.6 0.118 184.704);
+  --color-chart-1: oklch(0.646 0.222 41.116);
+  --color-ring: oklch(0.708 0 0);
+  --color-input: oklch(0.922 0 0);
+  --color-border: oklch(0.922 0 0);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-accent-foreground: oklch(0.205 0 0);
+  --color-accent: oklch(0.97 0 0);
+  --color-muted-foreground: oklch(0.556 0 0);
+  --color-muted: oklch(0.97 0 0);
+  --color-secondary-foreground: oklch(0.205 0 0);
+  --color-secondary: #111c4d;
+  --color-primary-foreground: oklch(0.985 0 0);
+  --color-primary: #e81f76;
+  --color-popover-foreground: oklch(0.145 0 0);
+  --color-popover: oklch(1 0 0);
+  --color-card-foreground: oklch(0.145 0 0);
+  --color-card: oklch(1 0 0);
+  --radius-sm: calc(0.625rem - 4px);
+  --radius-md: calc(0.625rem - 2px);
+  --radius-lg: 0.625rem;
+  --radius-xl: calc(0.625rem + 4px);
+  /* extra colors */
+  --color-link: #2d3fa0;
+
+  /* ===========================================
+   * FEDGROUP DESIGN SYSTEM COLORS
+   * ===========================================
+   * Based on the official Fedgroup design system
+   * Organized by purpose and semantic meaning
+   */
+
+  /* --- CORE BRAND COLORS --- */
+    /* Core Brand Colors */
+    --color-primary-brand: #111C4D; /* page footer/primary, button/list/hover, Primary brand (FedBlue) */
+    --color-primary-ctas: #DE176D;   /* Existing: Primary CTAs (FedPink) - now correlates to --color-fedpink-500 */
+    --color-warning: #E5A000;       /* button/warning/Primary Default, Warnings, highlights */
+    --color-error: #CF1511;         /* button/danger/Primary Default, Error, destructive actions */
+    --color-success: #0F7A44;       /* button/success/Primary Default, Success, confirmation */
+    --color-information: #54616C;   /* button/information/Primary Default, Info states, neutral UI elements */
+    --color-section-background: #FAFAFA; /* section/background, Page or section backgrounds */
+    --color-input-background: #F0F2FC;   /* input/Input Bg Default, input/Select Bg Default, Input and form background */
+    --color-page-neutral: #F7F8F9;   /* page/neutral, Neutral UI elements */
+
+      /* Fedgroup/FedBlue Color Variants (NEW) */
+  --color-fedblue-50: #EBECF6;
+  --color-fedblue-100: #C3C7E6;
+  --color-fedblue-200: #9AA1D9;
+  --color-fedblue-300: #6E7ACD;
+  --color-fedblue-400: #4053C4;
+  --color-fedblue-500: #2D3FA0;
+  --color-fedblue-600: #1E2D78;
+  --color-fedblue-700: #111C4D; /* Matches original --color-primary-brand */
+  --color-fedblue-800: #141B3C;
+  --color-fedblue-900: #14192E;
+  --color-fedblue-950: #131621; /* Appears dark grey/black, please verify if intentional for blue palette */
+  --color-fedblue-default: #141B3C;
+
+  /* Fedgroup/FedGrey Color Variants */
+  --color-fedgrey-50: #F7F8F9;
+  --color-fedgrey-100: #DEE2E6;
+  --color-fedgrey-200: #C6CDD4;
+  --color-fedgrey-300: #ADB7C1;
+  --color-fedgrey-400: #95A2AE;
+  --color-fedgrey-500: #7C8C9A;
+  --color-fedgrey-600: #677785;
+  --color-fedgrey-700: #54616C;
+  --color-fedgrey-800: #485359;
+  --color-fedgrey-900: #3B4447;
+  --color-fedgrey-950: #2E3435;
+  --color-fedgrey-default: #54616C;
+
+  /* Fedgroup/FedPink Color Variants */
+--color-fedpink-50: #FEEFF5;
+--color-fedpink-100: #FBC4DA;
+--color-fedpink-200: #F79AC0;
+--color-fedpink-300: #F370A7;
+--color-fedpink-400: #EE478E;
+--color-fedpink-500: #E81F76;
+--color-fedpink-525: #DE176D;
+--color-fedpink-550: #D41669;
+--color-fedpink-600: #C31760;
+--color-fedpink-650: #A91452;
+--color-fedpink-700: #98144C;
+--color-fedpink-800: #6E1038;
+--color-fedpink-900: #450B23;
+--color-fedpink-950: #1D050F;
+--color-fedpink-default: #E81F76;
+
+/* Fedgroup/FedOrange Color Variants */
+--color-fedorange-50: #FEF1EF;
+--color-fedorange-100: #FCCCC1;
+--color-fedorange-200: #FBAC93;
+--color-fedorange-300: #FB9063;
+--color-fedorange-400: #FD7832;
+--color-fedorange-500: #F60;
+--color-fedorange-600: #CD4906;
+--color-fedorange-700: #9D320A;
+--color-fedorange-800: #70200B;
+--color-fedorange-900: #451209;
+--color-fedorange-950: #1D0705;
+--color-fedorange-default: #F60;
+
+
+/* Blue Color Variants */
+--color-blue-50: #EEF1FC;
+--color-blue-100: #D2DCF9;
+--color-blue-200: #B5C8F7;
+--color-blue-300: #96B5F6;
+--color-blue-400: #75A4F8;
+--color-blue-500: #5396FB;
+--color-blue-600: #2F8AFF;
+--color-blue-700: #056FF9;
+--color-blue-800: #095AC6;
+--color-blue-900: #0A4595;
+--color-blue-950: #0A3067;
+
+/* Green Color Variants */
+
+--color-green-50: #EBFFEE;
+--color-green-100: #B1FDC2;
+--color-green-200: #7AF99D;
+--color-green-300: #46F381;
+--color-green-400: #15EB6A;
+--color-green-500: #14AE5C;
+--color-green-600: #129450;
+--color-green-700: #0F7A44;
+--color-green-800: #0C6037;
+--color-green-900: #094629;
+--color-green-950: #062D1B;
+
+
+/* Yellow Color Variants */
+
+--color-yellow-50: #FFFBEB;
+--color-yellow-100: #FFEFB7;
+--color-yellow-200: #FFE183;
+--color-yellow-300: #FFD14E;
+--color-yellow-400: #FFBF1A;
+--color-yellow-500: #E5A000;
+--color-yellow-600: #C47E01;
+--color-yellow-700: #A25F01;
+--color-yellow-800: #814501;
+--color-yellow-900: #612E01;
+--color-yellow-950: #401B01;
+
+
+/* Red Color Variants */
+
+--color-red-50: #FEE9E7;
+--color-red-100: #FCC2BE;
+--color-red-200: #F99895;
+--color-red-300: #F5736D;
+--color-red-400: #F14B46;
+--color-red-500: #EB2E1E;
+--color-red-600: #CF1511;
+--color-red-700: #A8120D;
+--color-red-800: #800F09;
+--color-red-900: #580806;
+--color-red-950: #2F0603;
+
+/* Grey Color Variants */
+
+--color-grey-50: #FAFAFA;
+--color-grey-100: #F8F8F8;
+--color-grey-200: #F1F1F1;
+--color-grey-300: #E7E7E7;
+--color-grey-400: #D8D8D8;
+--color-grey-500: #C5C5C5;
+--color-grey-600: #ADADAD;
+--color-grey-700: #919191;
+--color-grey-800: #717171;
+--color-grey-900: #4D4D4D;
+--color-grey-950: #242424;
+
+
+/* Blue Grey Color Variants */
+
+--color-blue-grey-50: #ECEFF1;
+--color-blue-grey-100: #E5E9EC;
+--color-blue-grey-200: #D1D9DE;
+--color-blue-grey-300: #B2BFC8;
+--color-blue-grey-400: #8AA0AC;
+--color-blue-grey-500: #607D8B;
+--color-blue-grey-600: #455963;
+--color-blue-grey-700: #2C393F;
+--color-blue-grey-800: #181F23;
+--color-blue-grey-900: #0B0F10;
+--color-blue-grey-950: #07090A;
+
+/* Data Visualisation/Qualitative/Categorical Colors */
+
+--color-qc-1: #0FB5AE;
+--color-qc-2: #4046CA;
+--color-qc-3: #F68511;
+--color-qc-4: #DE3D82;
+--color-qc-5: #7E84FA;
+--color-qc-6: #72E06A;
+--color-qc-7: #147AF3;
+--color-qc-8: #7326D3;
+--color-qc-9: #E8C600;
+--color-qc-10: #CB5D00;
+--color-qc-11: #008F5D;
+--color-qc-12: #BCE931;
+
+/* Data Visualisation/Divergent/Red–Yellow–Blue Colors */
+
+--color-dryb-r7: #4A001E;
+--color-dryb-r6: #751232;
+--color-dryb-r5: #A52747;
+--color-dryb-r4: #C65154;
+--color-dryb-r3: #E47961;
+--color-dryb-r2: #F0A882;
+--color-dryb-r1: #FAD4AC;
+--color-dryb-y0: #FFFFE0;
+--color-dryb-b1: #BCE2CF;
+--color-dryb-b2: #89C0C4;
+--color-dryb-b3: #579EB9;
+--color-dryb-b4: #397AA8;
+--color-dryb-b5: #1C5796;
+--color-dryb-b6: #163771;
+--color-dryb-b7: #10194D;
+
+
+/* Electric Blue Colors */
+
+--color-electricblue-50: #EBFAFF;
+--color-electricblue-100: #D7F6FF;
+--color-electricblue-200: #C3F1FF;
+--color-electricblue-300: #9CE8FF;
+--color-electricblue-400: #75E0FF;
+--color-electricblue-500: #4ED7FF;
+--color-electricblue-600: #26CEFF;
+--color-electricblue-700: #00A6D7;
+--color-electricblue-800: #0088b0;
+--color-electricblue-900: #006989;
+--color-electricblue-950: #004b61;
+
+  /* --- 2. Define Theme Variables using v4.0 Naming Conventions --- */
+  /* These will automatically populate Tailwind's theme scales internally. */
+  /* --font-size-h1: 48px;
+  --font-size-h2: 38px;
+  --font-size-h3: 32px;
+  --font-size-h4: 28px;
+  --font-size-h5: 22px;
+  --font-size-h6: 18px;
+  --font-size-h4-accent: 22px;
+  --font-size-lead-body: 18px; */
+
+  /*
+  |=============================================================================
+  |  RESPONSIVE TYPOGRAPHY
+  |=============================================================================
+  */
+  /*
+    We define a base size (e.g., for 'xl' screens) and smaller sizes for 'md' (tablet) and 'sm' (mobile).
+    The 'sm' size is usually the default, with larger sizes applied using @media queries.
+  */
+
+  /* Heading 1 */
+  --font-size-h1-sm: 36px; /* H1 on small screens (mobile-first default) */
+  --font-size-h1: 48px;    /* H1 on larger screens (desktop) */
+
+  /* Heading 2 */
+  --font-size-h2-sm: 32px;
+  --font-size-h2: 38px;
+
+  /* Heading 3 */
+  --font-size-h3-sm: 28px;
+  --font-size-h3: 32px;
+
+  /* Heading 4 */
+  --font-size-h4-sm: 24px;
+  --font-size-h4: 28px;
+
+  /* Heading 5 */
+  --font-size-h5-sm: 20px;
+  --font-size-h5: 22px;
+
+  /* Heading 6 */
+  --font-size-h6-sm: 18px; /* H6 might stay same or change little */
+  --font-size-h6: 18px;
+
+  /* Heading 4 Accent */
+  --font-size-h4-accent-sm: 20px;
+  --font-size-h4-accent: 22px;
+
+  /* Hero */
+  --font-size-hero-h2: 24px;
+
+  /* Lead Body */
+  --font-size-lead-body-sm: 16px;
+  --font-size-lead-body: 18px;
+
+
+  /* Body Font Sizes */
+  --font-size-base: 16px; /* For Body Base, Body Code, Body Emphasis, Body Link Underline, Body Strong */
+  --font-size-small-body: 14px; /* For Body Small, Body Small Strong */
+
+  --line-height-120: 1.2;
+  --line-height-140: 1.4;
+
+  /* Body Line Heights */
+  --line-height-150: 1.5;
+  --line-height-110: 1.1;
+
+  --letter-spacing-neg-1: -1px;
+  --letter-spacing-neg-0-6: -0.6px;
+  --letter-spacing-neg-0-3: -0.3px;
+  --letter-spacing-neg-0-1: -0.1px;
+  --letter-spacing-0: 0px;
+  --letter-spacing-0-1: 0.1px;
+
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Font Families */
+  --font-montserrat: var(--font-montserrat);
+  --font-bitter: var(--font-bitter);
+  --font-inter: var(--font-inter);
+
+  /* Spacing Scale */
+  --spacing-1: 4px;   /* 4 * 1 */
+  --spacing-2: 8px;   /* 4 * 2 */
+  --spacing-3: 12px;  /* 4 * 3 */
+  --spacing-4: 16px;  /* 4 * 4 */
+  --spacing-6: 24px;  /* 4 * 6 */
+  --spacing-8: 32px;  /* 4 * 8 */
+  --spacing-10: 40px; /* 4 * 10 */
+  --spacing-16: 64px; /* 4 * 16 */
+  --spacing-32: 128px; /* 4 * 32 */
+
+  /* Grid System Variables */
+  /* Extra Small (Mobile-Portrait): 320px - Default/Base */
+  --grid-xs-columns: 2;
+  --grid-xs-gutter: 24px;
+  --grid-xs-margin: 16px;
+
+  /* Small (Standard): 640px */
+  --grid-sm-columns: 5;
+  --grid-sm-gutter: 24px;
+  --grid-sm-margin: 72px;
+
+  /* Medium (Tablet-Portrait): 768px */
+  --grid-md-columns: 8;
+  --grid-md-gutter: 24px;
+  --grid-md-margin: 72px;
+
+  /* Large (HD): 1280px */
+  --grid-lg-columns: 8;
+  --grid-lg-gutter: 32px;
+  --grid-lg-margin: 128px;
+
+  /* Full HD: 1920px */
+  --grid-xl-columns: 12;
+  --grid-xl-gutter: 32px;
+  --grid-xl-margin: 76px;
+}
+
+/* Custom Utility Classes - Define them in @layer utilities */
+@layer utilities {
+  .h1-title-hero {
+    font-family: var(--font-montserrat);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h1-sm); /* Default (mobile-first) size */
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-neg-1);
+
+    @media (min-width: 640px) { /* Example: For 'sm' breakpoint and up */
+      font-size: var(--font-size-h1-sm); /* H1 might stay same for sm as it's base */
+    }
+    @media (min-width: 768px) { /* For 'md' breakpoint and up */
+      font-size: var(--font-size-h1); /* Larger size for medium screens */
+    }
+    /* Add more media queries if needed for larger breakpoints */
+  }
+
+  .h2-heading {
+    font-family: var(--font-montserrat);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h2-sm); /* Default (mobile-first) size */
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-neg-0-6);
+    @media (min-width: 768px) { /* Example for md breakpoint */
+      font-size: var(--font-size-h2);
+    }
+  }
+
+  .h2-subtitle-hero{
+    font-family: var(--font-montserrat);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-hero-h2);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-0);
+  }
+
+  .h3-heading {
+    font-family: var(--font-montserrat);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h3-sm);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-neg-0-3);
+    @media (min-width: 768px) {
+      font-size: var(--font-size-h3);
+    }
+  }
+  .h4-heading {
+    font-family: var(--font-montserrat);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h4-sm);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-neg-0-1);
+    @media (min-width: 768px) {
+      font-size: var(--font-size-h4);
+    }
+  }
+  .h5-heading {
+    font-family: var(--font-montserrat);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h5-sm);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-neg-0-1);
+    @media (min-width: 768px) {
+      font-size: var(--font-size-h5);
+    }
+  }
+  .h6-heading {
+    font-family: var(--font-montserrat);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-h6-sm);
+    line-height: var(--line-height-140);
+    letter-spacing: var(--letter-spacing-0);
+    @media (min-width: 768px) {
+      font-size: var(--font-size-h6);
+    }
+  }
+  .h4-accent-style {
+    font-family: var(--font-bitter);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-h4-accent-sm);
+    line-height: var(--line-height-120);
+    letter-spacing: var(--letter-spacing-0-1);
+    @media (min-width: 768px) {
+      font-size: var(--font-size-h4-accent);
+    }
+  }
+  .lead-body-style {
+    font-family: var(--font-inter);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-lead-body-sm);
+    line-height: var(--line-height-140);
+    letter-spacing: var(--letter-spacing-0-1);
+    @media (min-width: 768px) {
+      font-size: var(--font-size-lead-body);
+    }
+  }
+
+  /* Body Typography Styles */
+  .body-base {
+    font-family: var(--font-inter);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-0-1);
+  }
+  .body-code {
+    font-family: var(--font-roboto-mono);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-110);
+    letter-spacing: var(--letter-spacing-0);
+  }
+  .body-emphasis {
+    font-family: var(--font-inter);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-0-1);
+    font-style: italic;
+  }
+  .body-link-underline {
+    font-family: var(--font-inter);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-0-1);
+    text-decoration: underline;
+  }
+  .body-small {
+    font-family: var(--font-inter);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-small-body);
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-0);
+  }
+  .body-small-strong {
+    font-family: var(--font-inter);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-small-body);
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-0);
+  }
+  .body-strong {
+    font-family: var(--font-inter);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-0-1);
+  }
+
+  /* Grid Layouts - Container Utilities */
+  /* Using standard CSS media queries with design's specific breakpoints */
+
+  /* Extra Small (Mobile-Portrait): 320px - Default/Base */
+  .grid-container-xs {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-xs-columns), minmax(0, 1fr));
+    gap: var(--grid-xs-gutter);
+    margin-left: var(--grid-xs-margin);
+    margin-right: var(--grid-xs-margin);
+  }
+
+  /* Small (Standard Tailwind default): 640px */
+  @media (min-width: 640px) {
+    .grid-container-sm {
+      grid-template-columns: repeat(var(--grid-sm-columns), minmax(0, 1fr));
+      gap: var(--grid-sm-gutter);
+      margin-left: var(--grid-sm-margin);
+      margin-right: var(--grid-sm-margin);
+    }
+  }
+
+  /* Medium (Tablet-Portrait): 768px */
+  @media (min-width: 768px) {
+    .grid-container-md {
+      grid-template-columns: repeat(var(--grid-md-columns), minmax(0, 1fr));
+      gap: var(--grid-md-gutter);
+      margin-left: var(--grid-md-margin);
+      margin-right: var(--grid-md-margin);
+    }
+  }
+
+  /* Large (HD): 1280px */
+  @media (min-width: 1280px) {
+    .grid-container-lg {
+      grid-template-columns: repeat(var(--grid-lg-columns), minmax(0, 1fr));
+      gap: var(--grid-lg-gutter);
+      margin-left: var(--grid-lg-margin);
+      margin-right: var(--grid-lg-margin);
+    }
+  }
+
+  /* Full HD: 1920px */
+  @media (min-width: 1920px) {
+    .grid-container-xl {
+      grid-template-columns: repeat(var(--grid-xl-columns), minmax(0, 1fr));
+      gap: var(--grid-xl-gutter);
+      margin-left: var(--grid-xl-margin);
+      margin-right: var(--grid-xl-margin);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
