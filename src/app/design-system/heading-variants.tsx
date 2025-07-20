@@ -52,7 +52,7 @@ export const HeadingVariants = () => {
             Heading 2 Page Subtitle (Montserrat 400, 24px, 0% LS)
           </p>
           <Heading variant="heading-2-page-subtitle">
-            With high returns and low volatility, no fees and no tax, it's the best of both worlds!
+            With high returns and low volatility, no fees and no tax, it&apos;s the best of both worlds!
           </Heading>
         </div>
 

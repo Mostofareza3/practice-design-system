@@ -66,7 +66,7 @@ const Text: React.FC<TextProps> = ({ variant, as, className = '', children, ...p
       );
       return (
         <p className="text-destructive font-bold p-2 border border-destructive rounded-md">
-          Error: Invalid Text variant "{variant}"
+          Error: Invalid Text variant {variant}
         </p>
       );
     }

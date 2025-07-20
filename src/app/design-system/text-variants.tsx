@@ -12,7 +12,7 @@ export const TextVariants = () => {
             Lead Paragraph (Inter 600, 18px, 0.8% LS)
           </p>
           <Text variant="lead-paragraph">
-            This is a lead paragraph that introduces important content and draws the reader's attention with its distinctive styling and emphasis.
+            This is a lead paragraph that introduces important content and draws the reader&&apos;s attention with its distinctive styling and emphasis.
           </Text>
         </div>
 
@@ -92,7 +92,7 @@ export const TextVariants = () => {
             Body Small (Inter 400, 14px, 0.3% LS)
           </p>
           <Text variant="body-small">
-            This is small body text used for secondary information, captions, or supporting content that doesn't need as much visual weight.
+            This is small body text used for secondary information, captions, or supporting content that doesn&apos;t need as much visual weight.
           </Text>
         </div>
 
@@ -192,7 +192,7 @@ export const TextVariants = () => {
             Body Code (Roboto Mono 400, 16px, 0% LS)
           </p>
           <Text variant="body-code">
-            const greeting = "Hello, World!"; // This is code text
+            const greeting = &quot;Hello, World!&quot;; // This is code text
           </Text>
         </div>
 

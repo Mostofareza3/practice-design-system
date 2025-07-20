@@ -28,18 +28,33 @@
 
 @layer utilities {
   /* Grid Layouts - Container Utilities */
-  /* Using standard CSS media queries with design's specific breakpoints */
+  
+  /* Base grid setup for all containers */
+  .grid-container-xs,
+  .grid-container-sm,
+  .grid-container-md,
+  .grid-container-lg,
+  .grid-container-xl {
+    display: grid;
+    width: 100%;
+  }
 
   /* Extra Small (Mobile-Portrait): 320px - Default/Base */
   .grid-container-xs {
-    display: grid;
     grid-template-columns: repeat(var(--grid-xs-columns), minmax(0, 1fr));
     gap: var(--grid-xs-gutter);
     margin-left: var(--grid-xs-margin);
     margin-right: var(--grid-xs-margin);
   }
 
-  /* Small (Standard Tailwind default): 640px */
+  /* Small (Standard): 640px - Base setup */
+  .grid-container-sm {
+    grid-template-columns: repeat(var(--grid-xs-columns), minmax(0, 1fr));
+    gap: var(--grid-xs-gutter);
+    margin-left: var(--grid-xs-margin);
+    margin-right: var(--grid-xs-margin);
+  }
+
   @media (min-width: 640px) {
     .grid-container-sm {
       grid-template-columns: repeat(var(--grid-sm-columns), minmax(0, 1fr));
@@ -49,7 +64,23 @@
     }
   }
 
-  /* Medium (Tablet-Portrait): 768px */
+  /* Medium (Tablet-Portrait): 768px - Base setup */
+  .grid-container-md {
+    grid-template-columns: repeat(var(--grid-xs-columns), minmax(0, 1fr));
+    gap: var(--grid-xs-gutter);
+    margin-left: var(--grid-xs-margin);
+    margin-right: var(--grid-xs-margin);
+  }
+
+  @media (min-width: 640px) {
+    .grid-container-md {
+      grid-template-columns: repeat(var(--grid-sm-columns), minmax(0, 1fr));
+      gap: var(--grid-sm-gutter);
+      margin-left: var(--grid-sm-margin);
+      margin-right: var(--grid-sm-margin);
+    }
+  }
+
   @media (min-width: 768px) {
     .grid-container-md {
       grid-template-columns: repeat(var(--grid-md-columns), minmax(0, 1fr));
@@ -59,7 +90,32 @@
     }
   }
 
-  /* Large (HD): 1280px */
+  /* Large (HD): 1280px - Base setup */
+  .grid-container-lg {
+    grid-template-columns: repeat(var(--grid-xs-columns), minmax(0, 1fr));
+    gap: var(--grid-xs-gutter);
+    margin-left: var(--grid-xs-margin);
+    margin-right: var(--grid-xs-margin);
+  }
+
+  @media (min-width: 640px) {
+    .grid-container-lg {
+      grid-template-columns: repeat(var(--grid-sm-columns), minmax(0, 1fr));
+      gap: var(--grid-sm-gutter);
+      margin-left: var(--grid-sm-margin);
+      margin-right: var(--grid-sm-margin);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .grid-container-lg {
+      grid-template-columns: repeat(var(--grid-md-columns), minmax(0, 1fr));
+      gap: var(--grid-md-gutter);
+      margin-left: var(--grid-md-margin);
+      margin-right: var(--grid-md-margin);
+    }
+  }
+
   @media (min-width: 1280px) {
     .grid-container-lg {
       grid-template-columns: repeat(var(--grid-lg-columns), minmax(0, 1fr));
@@ -69,7 +125,41 @@
     }
   }
 
-  /* Full HD: 1920px */
+  /* Full HD: 1920px - Base setup */
+  .grid-container-xl {
+    grid-template-columns: repeat(var(--grid-xs-columns), minmax(0, 1fr));
+    gap: var(--grid-xs-gutter);
+    margin-left: var(--grid-xs-margin);
+    margin-right: var(--grid-xs-margin);
+  }
+
+  @media (min-width: 640px) {
+    .grid-container-xl {
+      grid-template-columns: repeat(var(--grid-sm-columns), minmax(0, 1fr));
+      gap: var(--grid-sm-gutter);
+      margin-left: var(--grid-sm-margin);
+      margin-right: var(--grid-sm-margin);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .grid-container-xl {
+      grid-template-columns: repeat(var(--grid-md-columns), minmax(0, 1fr));
+      gap: var(--grid-md-gutter);
+      margin-left: var(--grid-md-margin);
+      margin-right: var(--grid-md-margin);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .grid-container-xl {
+      grid-template-columns: repeat(var(--grid-lg-columns), minmax(0, 1fr));
+      gap: var(--grid-lg-gutter);
+      margin-left: var(--grid-lg-margin);
+      margin-right: var(--grid-lg-margin);
+    }
+  }
+
   @media (min-width: 1920px) {
     .grid-container-xl {
       grid-template-columns: repeat(var(--grid-xl-columns), minmax(0, 1fr));

@@ -47,7 +47,7 @@ const Heading: React.FC<HeadingProps> = ({ variant, as, className = '', children
       );
       return (
         <p className="text-destructive font-bold p-2 border border-destructive rounded-md">
-          Error: Invalid Typography variant "{variant}"
+          Error: Invalid Typography variant {variant}
         </p>
       );
     }
