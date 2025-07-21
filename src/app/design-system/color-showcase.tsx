@@ -34,7 +34,7 @@ const ColorShowcase: React.FC = () => {
   const colorPalettes: ColorPalette[] = [
     {
       title: "Core Brand Colors",
-      description: "Primary colors that define the FedGroup brand identity",
+      description: "Primary colors that define the brand identity",
       colors: [
         { name: "Primary Brand", variable: "--color-primary-brand", value: "#111C4D", description: "Main brand color (FedBlue)" },
         { name: "Primary CTAs", variable: "--color-primary-ctas", value: "#DE176D", description: "Primary call-to-action color (FedPink)" },

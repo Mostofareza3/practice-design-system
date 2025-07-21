@@ -25,8 +25,8 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fedgroup",
-  description: "Fedgroup is a platform for managing your finances.",
+  title: "Design System",
+  description: "Practice Design System",
 };
 
 export default function RootLayout({

@@ -3,9 +3,9 @@
   --color-link: #2d3fa0;
 
   /* ===========================================
-   * FEDGROUP DESIGN SYSTEM COLORS
+   *  DESIGN SYSTEM COLORS
    * ===========================================
-   * Based on the official Fedgroup design system
+   * Based on the official  design system
    * Organized by purpose and semantic meaning
    */
 
@@ -24,7 +24,7 @@
     --color-input-background: #F0F2FC;   /* input/Input Bg Default, input/Select Bg Default, Input and form background */
     --color-page-neutral: #F7F8F9;   /* page/neutral, Neutral UI elements */
 
-      /* Fedgroup/FedBlue Color Variants (NEW) */
+      /* /FedBlue Color Variants (NEW) */
   --color-fedblue-50: #EBECF6;
   --color-fedblue-100: #C3C7E6;
   --color-fedblue-200: #9AA1D9;
@@ -38,7 +38,7 @@
   --color-fedblue-950: #131621; /* Appears dark grey/black, please verify if intentional for blue palette */
   --color-fedblue-default: #141B3C;
 
-  /* Fedgroup/FedGrey Color Variants */
+  /* /FedGrey Color Variants */
   --color-fedgrey-50: #F7F8F9;
   --color-fedgrey-100: #DEE2E6;
   --color-fedgrey-200: #C6CDD4;
@@ -52,7 +52,7 @@
   --color-fedgrey-950: #2E3435;
   --color-fedgrey-default: #54616C;
 
-  /* Fedgroup/FedPink Color Variants */
+  /* /FedPink Color Variants */
 --color-fedpink-50: #FEEFF5;
 --color-fedpink-100: #FBC4DA;
 --color-fedpink-200: #F79AC0;
@@ -70,7 +70,7 @@
 --color-fedpink-default: #E81F76;
 --color-fedpink: #E81F76;
 
-/* Fedgroup/FedOrange Color Variants */
+/* /FedOrange Color Variants */
 --color-fedorange-50: #FEF1EF;
 --color-fedorange-100: #FCCCC1;
 --color-fedorange-200: #FBAC93;
