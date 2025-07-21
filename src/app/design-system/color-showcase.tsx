@@ -211,7 +211,7 @@ const ColorShowcase: React.FC = () => {
   return (
     <div className="mb-16">
       <div className="flex justify-between items-center mb-8">
-        <Heading variant="heading-2" className="text-primary">
+        <Heading variant="heading-2" className="text-fedpink">
           Color System
         </Heading>
         

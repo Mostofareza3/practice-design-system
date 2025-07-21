@@ -3,7 +3,7 @@ import Text from "@/components/design-system/typography/body-text/Text";
 export const TextVariants = () => {
   return (
     <div className="mb-16">
-      <h2 className="text-2xl font-bold mb-8 text-primary">Body Text Variants</h2>
+      <h2 className="text-2xl font-bold mb-8 text-fedpink">Body Text Variants</h2>
 
       <div className="space-y-6">
         {/* Lead Paragraph */}

@@ -3,7 +3,7 @@ import Text from "@/components/design-system/typography/body-text/Text"
 export const GridSystem = () => {
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-8 text-primary">Grid System</h2>
+      <h2 className="text-2xl font-bold mb-8 text-fedpink">Grid System</h2>
       
       <div className="space-y-8">
         {/* Grid System Overview */}

@@ -3,7 +3,7 @@ import Heading from "@/components/design-system/typography/heading/Heading";
 export const HeadingVariants = () => {
   return (
     <div className="mb-16">
-      <h2 className="text-2xl font-bold mb-8 text-primary">Heading Variants</h2>
+      <h2 className="text-2xl font-bold mb-8 !text-fedpink">Heading Variants</h2>
 
       <div className="space-y-6">
         {/* Heading 1 Title Hero */}
